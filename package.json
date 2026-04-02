@@ -1,0 +1,13 @@
+{
+  "name": "inscricao-evento-uemg",
+  "version": "1.0.0",
+  "description": "Sistema de inscrição para evento da UEMG com CI/CD",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

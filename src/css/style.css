@@ -1,0 +1,141 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILO GLOBAL */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* 🎯 HERO (TOPO DO SITE) */
+.hero {
+  background: linear-gradient(135deg, #004080, #0073e6);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.hero .data {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 🧾 CONTAINER PRINCIPAL */
+.container {
+  max-width: 500px;
+  margin: -40px auto 40px auto; /* efeito de sobreposição */
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* TÍTULO */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* CAMPOS DO FORMULÁRIO */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.campo label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.campo input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+/* EFEITO AO CLICAR NO INPUT */
+.campo input:focus {
+  border-color: #0073e6;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 115, 230, 0.3);
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER DO BOTÃO */
+button:hover {
+  background-color: #005bb5;
+}
+
+/* MENSAGEM DE FEEDBACK */
+#mensagem {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #004080;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* 📱 RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin: -20px 10px 20px 10px;
+  }
+}
+
+/* ERROS */
+.erro {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 3px;
+  min-height: 14px;
+}
+
+/* INPUT VÁLIDO */
+.input-valido {
+  border: 2px solid green !important;
+}
+
+/* INPUT INVÁLIDO */
+.input-invalido {
+  border: 2px solid red !important;
+}

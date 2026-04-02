@@ -1,0 +1,35 @@
+name: CI - Testes Automatizados
+
+# Quando a pipeline será executada
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixar o código do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # 2. Configurar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Instalar dependências
+      - name: Instalar dependências
+        run: npm install
+
+      # 4. Executar testes
+      - name: Rodar testes
+        run: npm test
+
+      # 5. Gerar cobertura (diferencial)
+      - name: Gerar cobertura de testes
+        run: npm run test:coverage

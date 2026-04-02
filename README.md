@@ -1,6 +1,8 @@
 # Trab-Qualidade-CI-CD
 # 🎟️ Sistema de Cadastro de Usuários para Evento - UEMG
 
+![CI](https://github.com/pedroscfa/TRAB-QUALIDADE-CI-CD/actions/workflows/ci.yml/badge.svg)
+
 ## 📌 Descrição do Projeto
 
 Este projeto consiste no desenvolvimento de uma aplicação web estática para cadastro de participantes em um evento da UEMG. A aplicação permite que usuários realizem seu cadastro por meio de um formulário interativo, com validação de dados e armazenamento local.
