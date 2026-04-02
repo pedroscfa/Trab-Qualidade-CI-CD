@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * Validação em tempo real
    */
   Object.values(campos).forEach((campo) => {
-    campo.addEventListener("blur", () => validarCampo(campo));
+    campo.addEventListener( "blur", () => validarCampo(campo));
   });
 
   /**
