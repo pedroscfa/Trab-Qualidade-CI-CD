@@ -1,29 +1,79 @@
-<div class="campo">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evento UEMG Carangola</title>
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+  <!-- 🎯 SEÇÃO PRINCIPAL (CHAMATIVO DO EVENTO) -->
+  <header class="hero">
+    <h1>🎓 Evento Acadêmico UEMG - Carangola</h1>
+    <p>
+      Participe do nosso evento e amplie seus conhecimentos com palestras,
+      networking e atividades exclusivas!
+    </p>
+    <p class="data">📅 Data: 20 de Abril de 2026</p>
+  </header>
+
+  <!-- 📝 FORMULÁRIO DE INSCRIÇÃO -->
+  <main class="container">
+    <h2>Inscreva-se no evento</h2>
+
+    <form id="form-inscricao">
+
+      <div class="campo">
   <label for="nome">Nome completo</label>
   <input type="text" id="nome" />
   <span class="erro" id="erro-nome"></span>
 </div>
 
-<div class="campo">
-  <label for="inscricao">Número de inscrição</label>
-  <input type="text" id="inscricao" />
-  <span class="erro" id="erro-inscricao"></span>
-</div>
+    <div class="campo">
+      <label for="inscricao">Número de inscrição</label>
+      <input type="text" id="inscricao" />
+      <span class="erro" id="erro-inscricao"></span>
+    </div>
 
-<div class="campo">
-  <label for="email">Email institucional</label>
-  <input type="email" id="email" />
-  <span class="erro" id="erro-email"></span>
-</div>
+    <div class="campo">
+      <label for="email">Email institucional</label>
+      <input type="email" id="email" />
+      <span class="erro" id="erro-email"></span>
+    </div>
 
-<div class="campo">
-  <label for="curso">Curso</label>
-  <input type="text" id="curso" />
-  <span class="erro" id="erro-curso"></span>
-</div>
+    <div class="campo">
+      <label for="curso">Curso</label>
+      <input type="text" id="curso" />
+      <span class="erro" id="erro-curso"></span>
+    </div>
 
-<div class="campo">
-  <label for="periodo">Período</label>
-  <input type="number" id="periodo" />
-  <span class="erro" id="erro-periodo"></span>
-</div>
+    <div class="campo">
+      <label for="periodo">Período</label>
+      <input type="number" id="periodo" />
+      <span class="erro" id="erro-periodo"></span>
+    </div>
+
+      <!-- Botão -->
+      <button type="submit">Confirmar Inscrição</button>
+
+    </form>
+
+    <!-- Mensagem de feedback -->
+    <p id="mensagem"></p>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 UEMG - Unidade Carangola</p>
+  </footer>
+
+  <!-- Script JS -->
+  <script type="module" src="./js/form.js"></script>
+
+</body>
+</html>
+
