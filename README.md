@@ -75,20 +75,26 @@ Os testes unitários foram implementados para garantir a qualidade das principai
 npm install
 npm run test
 
-📁 projeto/
-├── 📁 src/
-│   ├── js/
-│   │   ├── cadastro.js
-│   │   ├── validacoes.js
-│   │   └── storage.js
-│   ├── css/
-│   └── index.html
-├── 📁 tests/
-│   ├── cadastro.test.js
-│   ├── validacoes.test.js
-│   └── storage.test.js
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── package.json
-└── README.md
+📁 inscricao-evento-uemg/
+├── 📁 src/                     # Código principal da aplicação
+│   ├── 📁 js/
+│   │   ├── form.js             # Manipulação do formulário (DOM)
+│   │   ├── validacoes.js       # Regras de negócio (VALIDADO NOS TESTES)
+│   │   └── utils.js            # Funções auxiliares (LocalStorage, etc.)
+│   │
+│   ├── 📁 css/
+│   │   └── style.css           # Estilos da aplicação
+│   │
+│   └── index.html             # Página principal
+│
+├── 📁 tests/                  # Testes automatizados
+│   └── validacoes.test.js     # Testes unitários das regras de negócio
+│
+├── 📁 .github/
+│   └── 📁 workflows/
+│       └── ci.yml             # Pipeline de CI (GitHub Actions)
+│
+├── jest.config.js            # Configuração do Jest
+├── package.json              # Dependências e scripts
+├── package-lock.json         # Gerado automaticamente
+└── README.md                 # Documentação do projeto
