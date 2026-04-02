@@ -72,3 +72,21 @@ Os testes unitários foram implementados para garantir a qualidade das principai
 ```bash
 npm install
 npm run test
+
+📁 projeto/
+├── 📁 src/
+│   ├── js/
+│   │   ├── cadastro.js
+│   │   ├── validacoes.js
+│   │   └── storage.js
+│   ├── css/
+│   └── index.html
+├── 📁 tests/
+│   ├── cadastro.test.js
+│   ├── validacoes.test.js
+│   └── storage.test.js
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── package.json
+└── README.md
