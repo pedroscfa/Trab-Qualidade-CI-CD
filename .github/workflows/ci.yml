@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Baixar o código do repositório
+      # Teste Alteração sem conflito
       - name: Checkout do código
         uses: actions/checkout@v5
 
