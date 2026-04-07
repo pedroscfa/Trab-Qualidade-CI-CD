@@ -14,7 +14,7 @@ jobs:
     steps:
       # 1. Baixar o código do repositório
       - name: Checkout do código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # 2. Configurar Node.js
       - name: Configurar Node.js
