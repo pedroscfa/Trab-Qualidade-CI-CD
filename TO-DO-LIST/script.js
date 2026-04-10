@@ -22,19 +22,31 @@ emailInput.addEventListener('input', () => {
   }
 });
 
-// Função para exibir tarefas
+// ✅ Função corrigida para evitar XSS (Uso de textContent)
 function mostrarTarefas() {
-  listaDiv.innerHTML = '';
+  listaDiv.innerHTML = ''; // Limpa a lista
+  
   tarefas.forEach(t => {
     const div = document.createElement('div');
     div.className = 'tarefa';
+    
+    // 1. Criamos a estrutura fixa (Placeholders)
     div.innerHTML = `
-      <strong>ID:</strong> ${t.id}<br>
-      <strong>Título:</strong> ${t.titulo}<br>
-      <strong>Descrição:</strong> ${t.descricao}<br>
-      <strong>Data:</strong> ${t.data}<br>
-      <strong>Email:</strong> ${t.email}<br>
+      <strong>ID:</strong> <span class="t-id"></span><br>
+      <strong>Título:</strong> <span class="t-titulo"></span><br>
+      <strong>Descrição:</strong> <span class="t-descricao"></span><br>
+      <strong>Data:</strong> <span class="t-data"></span><br>
+      <strong>Email:</strong> <span class="t-email"></span><br>
+      <hr>
     `;
+
+    // 2. Inserimos os dados usando textContent (Trata tudo como texto puro, nunca como código)
+    div.querySelector('.t-id').textContent = t.id;
+    div.querySelector('.t-titulo').textContent = t.titulo;
+    div.querySelector('.t-descricao').textContent = t.descricao;
+    div.querySelector('.t-data').textContent = t.data;
+    div.querySelector('.t-email').textContent = t.email;
+
     listaDiv.appendChild(div);
   });
 }
