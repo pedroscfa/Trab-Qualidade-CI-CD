@@ -53,7 +53,7 @@ Importante:
 
 ## Validação
 
-6. Faça um commit e push com os testes implementados.
+5. Faça um commit e push com os testes implementados.
 
 7. Verifique se:
 - A pipeline executa corretamente
