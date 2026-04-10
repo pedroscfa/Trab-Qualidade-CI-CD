@@ -55,7 +55,7 @@ Importante:
 
 5. Faça um commit e push com os testes implementados.
 
-7. Verifique se:
+6. Verifique se:
 - A pipeline executa corretamente
 - Os testes passam (ou falham, se houver erro)
 
@@ -75,6 +75,3 @@ Importante:
 - Testes implementados
 - Pipeline configurada e funcionando
 - Demonstração em aula
-
-
-teste pipeline
