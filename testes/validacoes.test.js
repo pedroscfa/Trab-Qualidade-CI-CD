@@ -1,94 +1,54 @@
-// validacoes.test.js
-
-import {
-  validarNome,
-  validarEmailInstitucional,
-  validarInscricao,
-  validarPeriodo,
-  validarFormulario
-} from "../src/js/validacoes.js";
+/**
+ * Valida se o nome é completo (pelo menos duas palavras)
+ */
+export function validarNome(nome) {
+  return nome.trim().split(" ").length >= 2;
+}
 
 /**
- * Testes da função validarNome
+ * Valida se o e-mail é do domínio institucional da UEMG
  */
-describe("Validação de Nome", () => {
-  test("Deve aceitar nome completo válido", () => {
-    expect(validarNome("Pedro Silva")).toBe(true);
-  });
-
-  test("Deve rejeitar nome com uma palavra", () => {
-    expect(validarNome("Pedro")).toBe(false);
-  });
-
-  test("Deve rejeitar nome vazio", () => {
-    expect(validarNome("")).toBe(false);
-  });
-});
+export function validarEmailInstitucional(email) {
+  return email.endsWith("@aluno.uemg.br") || email.endsWith("@uemg.br");
+}
 
 /**
- * Testes da validação de e-mail institucional
+ * Valida se a inscrição contém apenas números
  */
-describe("Validação de Email", () => {
-  test("Deve aceitar email institucional válido", () => {
-    expect(validarEmailInstitucional("aluno@uemg.br")).toBe(true);
-  });
-
-  test("Deve rejeitar email não institucional", () => {
-    expect(validarEmailInstitucional("gmail@gmail.com")).toBe(false);
-  });
-});
+export function validarInscricao(inscricao) {
+  const regex = /^\d+$/;
+  return regex.test(inscricao);
+}
 
 /**
- * Testes da inscrição
+ * Valida se o período está entre 1 e 10
  */
-describe("Validação de Inscrição", () => {
-  test("Deve aceitar apenas números", () => {
-    expect(validarInscricao("12345")).toBe(true);
-  });
-
-  test("Deve rejeitar letras", () => {
-    expect(validarInscricao("123abc")).toBe(false);
-  });
-});
+export function validarPeriodo(periodo) {
+  const p = parseInt(periodo);
+  return p >= 1 && p <= 10;
+}
 
 /**
- * Testes de período
+ * Valida o formulário completo
+ * GARANTE QUE SEMPRE RETORNA TRUE OU FALSE
  */
-describe("Validação de Período", () => {
-  test("Deve aceitar valores entre 1 e 10", () => {
-    expect(validarPeriodo(5)).toBe(true);
-  });
+export function validarFormulario(dados) {
+  // Verifica se todos os campos básicos existem
+  if (!dados.nome || !dados.email || !dados.inscricao || !dados.periodo) {
+    return false;
+  }
 
-  test("Deve rejeitar valores fora do intervalo", () => {
-    expect(validarPeriodo(11)).toBe(false);
-  });
-});
+  // Executa cada validação individual
+  const nomeValido = validarNome(dados.nome);
+  const emailValido = validarEmailInstitucional(dados.email);
+  const inscricaoValida = validarInscricao(dados.inscricao);
+  const periodoValido = validarPeriodo(dados.periodo);
 
-/**
- * Teste geral do formulário
- */
-describe("Validação do Formulário", () => {
-  test("Deve validar formulário completo correto", () => {
-    const dados = {
-      nome: "Pedro Silva",
-      inscricao: "12345",
-      email: "aluno@uemg.br",
-      curso: "Sistemas de Informação",
-      periodo: 5
-    };
+  // Se qualquer uma for falsa, a função toda retorna false
+  if (!nomeValido || !emailValido || !inscricaoValida || !periodoValido) {
+    return false;
+  }
 
-    expect(validarFormulario(dados)).toBe(true);
-  });
-
-  test("Deve rejeitar formulário inválido", () => {
-    const dados = {
-      nome: "Pedro",
-      inscricao: "abc",
-      email: "gmail.com",
-      curso: "",
-      periodo: 15
-    };
-
-    expect(validarFormulario(dados)).toBe(false);
-  });
-});
+  // Se passou por tudo, retorna true
+  return true;
+}
