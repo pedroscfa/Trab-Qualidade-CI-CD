@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   Object.values(campos).forEach((campo) => {
     campo.addEventListener( "blur", () => validarCampo(campo));
+    campo.addEventListener("input", () => validarCampo(campo));
   });
 
   /**
