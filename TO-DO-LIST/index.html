@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>To-do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+    input.valid {
+      border: 2px solid green;
+    }
+    input.invalid {
+      border: 2px solid red;
+    }
+    .tarefa {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To-do List</h1>
+
+  <div>
+    <input type="text" id="titulo" placeholder="Título">
+    <br>
+    <input type="text" id="descricao" placeholder="Descrição">
+    <br>
+    <input type="date" id="data">
+    <br>
+    <input type="email" id="email" placeholder="Email do responsável">
+    <span id="msg"></span>
+    <br>
+    <button id="criar">Criar Tarefa</button>
+  </div>
+
+  <h2>Lista de Tarefas</h2>
+  <div id="lista"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,8 +3,7 @@
 /**
  * Valida se o nome possui pelo menos duas palavras.
  * Regra: nome completo deve conter nome e sobrenome.
- * 
- * @param {string} nome
+ * * @param {string} nome
  * @returns {boolean}
  */
 export function validarNome(nome) {
@@ -19,8 +18,7 @@ export function validarNome(nome) {
 /**
  * Valida se o e-mail é institucional da UEMG.
  * Regra: deve terminar com @uemg.br
- * 
- * @param {string} email
+ * * @param {string} email
  * @returns {boolean}
  */
 export function validarEmailInstitucional(email) {
@@ -34,8 +32,7 @@ export function validarEmailInstitucional(email) {
 
 /**
  * Valida o número de inscrição (somente números).
- * 
- * @param {string} inscricao
+ * * @param {string} inscricao
  * @returns {boolean}
  */
 export function validarInscricao(inscricao) {
@@ -49,18 +46,16 @@ export function validarInscricao(inscricao) {
 
 /**
  * Valida se o curso foi preenchido.
- * 
- * @param {string} curso
+ * * @param {string} curso
  * @returns {boolean}
  */
 export function validarCurso(curso) {
-  return curso && curso.trim().length > 0;
+  return !!(curso && curso.trim().length > 0);
 }
 
 /**
  * Valida o período (entre 1 e 10).
- * 
- * @param {string|number} periodo
+ * * @param {string|number} periodo
  * @returns {boolean}
  */
 export function validarPeriodo(periodo) {
@@ -71,12 +66,12 @@ export function validarPeriodo(periodo) {
 
 /**
  * Verifica se todos os campos obrigatórios foram preenchidos.
- * 
- * @param {object} dados
+ * CORREÇÃO: Usamos !! para garantir o retorno booleano exigido pelo teste.
+ * * @param {object} dados
  * @returns {boolean}
  */
 export function validarCamposObrigatorios(dados) {
-  return (
+  return !!(
     dados.nome &&
     dados.inscricao &&
     dados.email &&
@@ -88,11 +83,9 @@ export function validarCamposObrigatorios(dados) {
 /**
  * Função principal de validação do formulário.
  * Centraliza todas as regras de negócio.
- * 
- * @param {object} dados
+ * * @param {object} dados
  * @returns {boolean}
  */
- 
 export function validarFormulario(dados) {
   return (
     validarCamposObrigatorios(dados) &&
