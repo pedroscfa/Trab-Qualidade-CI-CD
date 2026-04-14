@@ -76,7 +76,7 @@ export function validarPeriodo(periodo) {
  * @returns {boolean}
  */
 export function validarCamposObrigatorios(dados) {
-  return (
+  return Boolean (
     dados.nome &&
     dados.inscricao &&
     dados.email &&
@@ -94,7 +94,7 @@ export function validarCamposObrigatorios(dados) {
  */
  
 export function validarFormulario(dados) {
-  return (
+  return Boolean (
     validarCamposObrigatorios(dados) &&
     validarNome(dados.nome) &&
     validarEmailInstitucional(dados.email) &&
